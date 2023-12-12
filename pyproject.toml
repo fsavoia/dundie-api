@@ -1,11 +1,9 @@
 [project]
 name = "dundie"
 description = "Rewards API for Dunder Mifflin"
-authors = [
-    {name = 'Bruno Rocha', email = 'rochacbruno@gmail.com'},
-]
+authors = [{ name = 'Bruno Rocha', email = 'rochacbruno@gmail.com' }]
 requires-python = ">=3.8"
-license = {text = "MIT"}
+license = { text = "MIT" }
 dynamic = ["version", "readme", "dependencies"]
 
 [project.urls]
@@ -38,16 +36,13 @@ packages = ["dundie"]
 write_to = "dundie/VERSION.txt"
 
 [tool.setuptools.dynamic]
-readme = {file = ["docs/README.md"]}
-dependencies = {file = "requirements.txt"}
+readme = { file = ["docs/README.md"] }
+dependencies = { file = "requirements.txt" }
 
 [tool.pytest.ini_options]
 testpaths = 'tests'
 xfail_strict = true
-filterwarnings = [
-    'error',
-    'ignore:path is deprecated.*:DeprecationWarning:',
-]
+filterwarnings = ['error', 'ignore:path is deprecated.*:DeprecationWarning:']
 
 [tool.coverage.run]
 source = ['dundie']
@@ -57,10 +52,10 @@ context = '${CONTEXT}'
 [tool.coverage.report]
 precision = 2
 exclude_lines = [
-    'pragma: no cover',
-    'raise NotImplementedError',
-    'if TYPE_CHECKING:',
-    '@overload',
+	'pragma: no cover',
+	'raise NotImplementedError',
+	'if TYPE_CHECKING:',
+	'@overload',
 ]
 
 [tool.black]

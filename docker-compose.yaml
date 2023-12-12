@@ -6,8 +6,9 @@ services:
     build:
       context: .
       dockerfile: Dockerfile.dev
+    platform: linux/amd64
     ports:
-      - "8000:8000"
+      - "8080:8000"
     environment:
       DUNDIE_DB__uri: "postgresql://postgres:postgres@db:5432/${DUNDIE_DB:-dundie}"
       DUNDIE_DB__connect_args: "{}"
@@ -19,6 +20,7 @@ services:
     tty: true
   db:
     build: postgres
+    platform: linux/amd64
     image: dundie_postgres-13-alpine-multi-user
     volumes:
       - $HOME/.postgres/dundie_db/data/postgresql:/var/lib/postgresql/data
